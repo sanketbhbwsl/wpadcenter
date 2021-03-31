@@ -17,14 +17,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-	with:
+        with:
           fetch-depth: 100
       - name: Checkout submodules
         run: git submodule update --init --recursive
-	
+
       - name: Codecov
-	  uses: codecov/codecov-action@v1.3.1
-	  token: ${{ secrets.CODECOV_TOKEN }}
+        uses: codecov/codecov-action@v1.3.1
+        token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
